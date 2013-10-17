@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE-edge"/>
+		<title>La petite ceintre de Paris </title>
+		<!-- changer le mode de rendu selon le navigateur utilisé , içi dl du dernier mode de rendu IE-->
+		<!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+		<!--[if lte IE 7]>
+        <link rel="stylesheet" href="style_ie.css" />
+        <![endif]-->
+		<link rel="stylesheet" href="style/css.css" />
+		<link rel="stylesheet" href="style/reset.css" /> 
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+		<script type="text/javascript" src="js/spectragram.js"></script>
+		<script type="text/javascript" src="je/easing.js"></script>
+		<script type="text/javascript" src="js/js.js"> </script>
+		<script type="text/javascript" src="js/pluginascensor.js"> </script>
+		<meta name="description" content=""/>
+		<meta name="keywords" content=""/>
+		<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+	</head>	
+
+	<body>
+	
+		<form action="" id="map">
+			<fieldset>
+				<input type="button" class='myAscensorLinkPrev' name=""  />
+				<label for="">Slide précédente</label>
+				<input type="button" class='myAscensorLinkNext' name=""  />
+				<label for="">Slide suivante</label>
+			</fieldset>
+		</form>
+		
+		<form action="" id="map2">
+			<fieldset>
+				<input type="button" class='myAscensorLink myAscensorLink0' name=""  />
+				<label for="">Acceuil</label>
+				<input type="button" class='myAscensorLink myAscensorLink1' name=""  />
+				<label for="">historique</label>
+				<input type="button" class='myAscensorLink myAscensorLink2' name=""  />
+				<label for="">chronologie</label>
+				<input type="button" class='myAscensorLink myAscensorLink3' name=""  />
+				<label for="">carte</label>
+				<input type="button" class='myAscensorLink myAscensorLink4' name=""  />
+				<label for="">gallerie</label>
+				<input type="button" class='myAscensorLink myAscensorLink5' name=""  />
+				<label for="">sources</label>
+				<input type="button" class='myAscensorLink myAscensorLink6' name=""  />
+				<label for="">sondages</label>
+			
+				
+			</fieldset>
+		</form>
+		
+		<div id='site'>
+			<div	class='myAscensorFloor' id="myAscensorFloor0">
+				<section id="acceuil">
+						<p class="t1">acceuil</p>
+				</section>
+			</div>
+			<div	class='myAscensorFloor' id="myAscensorFloor1">
+				<section id="historique">
+						<p class="t1">historique</p>
+				</section>
+			</div>
+			<div	class='myAscensorFloor' id="myAscensorFloor2">
+				<section id="chronologie">
+						<p class="t1">chronologie</p>
+				</section>
+			</div>
+			<div	class='myAscensorFloor' id="myAscensorFloor3">
+				<section id="carte">
+						<p class="t1">carte</p>
+				</section>
+			</div>
+			<div	class='myAscensorFloor' id="myAscensorFloor4">
+				<section id="gallerie">
+						<p class="t1">gallerie</p>
+				</section>
+			</div>
+			<div	class='myAscensorFloor' id="myAscensorFloor5">
+				<section id="sources">
+						<p class="t1">sources</p>
+				</section>
+			</div>
+					<div	class='myAscensorFloor' id="myAscensorFloor6">
+				<section id="sondage">
+						<p class="t1">sondage</p>
+				</section>
+			</div>
+			
+	
+			</div>
+		</div>
+
+		<script>
+			$('#site').ascensor({
+			ascensorName: 'myAscensor',
+			 ascensorFloorName: ['content0','content1','content2','content3','content4','content5','content6'] ,
+			 childType: 'div',
+			 direction:'chocolate',
+			 ascensorMap:[[1,0],[1,1],[2,1],[1,2],[0,2],[2,2],[1,3]],
+			  windowsOn: 0,
+			  overflow:'hidden',
+			  easing:'linear',
+			  
+		
+			time:500,
+			
+});
+		</script>
+		
+	</body>
+</html>
