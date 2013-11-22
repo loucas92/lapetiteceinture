@@ -1,0 +1,409 @@
+
+<!DOCTYPE PUBLIC>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBQkawehNpJ9VEeg07Z2cvlSotn-qxennU&amp;sensor=false"></script>
+  <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery.scrollTo-min.js"></script>
+  <script type="text/javascript" src="js/jquery.localscroll-min.js"></script>
+  <script type="text/javascript" src="js/instagram.js"></script>
+  <script type="text/javascript" src="js/utilNavig.js"></script>
+  <script type="text/javascript" src="js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script type="text/javascript" src="js/utilCarte.js"></script>
+  <script type="text/javascript" src="js/utilHisto.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script> 
+  <script src="js/utilSondage.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="js/scroll/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" media="screen"/>
+  
+  <script type="text/javascript">
+	$(document).ready(function(){
+    var feed = new Instafeed({
+        get: 'tagged',
+        tagName: 'petiteceinture',
+        clientId: '9f6b0518b3e24362983cf7271702fd37',
+       	resolution: 'thumbnail',
+        sortBy: 'random',
+        limit: '60',
+        after: function () {
+		    var images = $("#instafeed").find('a');
+		    $.each(images, function(index, image) {
+		      var delay = (index * 75) + 'ms';
+		      $(image).css('-webkit-animation-delay', delay);
+		      $(image).css('-moz-animation-delay', delay);
+		      $(image).css('-ms-animation-delay', delay);
+		      $(image).css('-o-animation-delay', delay);
+		      $(image).css('animation-delay', delay);
+		      $(image).addClass('animated flipInX');
+		    });
+			$(".scroll_photo").mCustomScrollbar({
+                    verticalScroll:true, // barre verticale
+                    theme:"light",
+                    scrollInertia: 13,
+                    scrollButtons:{
+                            enable: false
+
+                    }
+                });
+		},
+        template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /><div class="likes">&hearts; {{likes}}</div></a>'
+        
+    });
+    feed.run();
+	
+	$(".scroll").mCustomScrollbar({
+                    verticalScroll:true, // barre verticale
+                    theme:"light",
+                    scrollInertia: 13,
+                    scrollButtons:{
+                            enable: false
+
+                    }
+                });
+	});
+</script>
+
+</head>
+
+<body onload="initialize()">  
+
+  <div id="navigation">
+  <ul>
+    <li class="logo"><a  class="logo" href="#section1"><img src="images/nav/logo.png"></a></li>
+    <li><a class="link" href="#section2">Histoire</a></li>
+	<li><a class="link" href="#section1a">Carte</a></li>
+    <li><a class="link" href="#section2a">Photo</a></li>
+	<li><a class="link" href="#section1b">Sondage</a></li>
+    <li><a class="link" href="#section2b">Credit</a></li>
+  </ul>
+  </div>
+
+  <div id="content">
+
+    <div class="section">
+      <ul>
+	  
+		<!--******************************
+		**		PAGE ACCUEIL			**
+		*******************************-->
+		
+        <li class="sub accueil" id="section1">
+          <div class="content">
+			<div id="presentation">
+			<h2>Qu’est ce que la Petite Ceinture ?</h2>
+			<p>“ La petite Ceinture, ou “coulée verte”,	est une voie ferrée <br/>
+			longue de 32km et faisant le tour de Paris. ”</div>
+		  </div>
+          <a href="#section1a" class="next"></a>
+        </li>
+        <li class="sub carte" id="section1a">
+				<div id="hideshow" style="visibility: hidden;">
+			    	<div id="fade"></div> 
+				    <div class="popup_block"> 
+					        <div class="popup" id="popup"> 
+					            <a href="javascript:hideDiv()">
+					                <img src="images/nav/icon_close.png" class="cntrl" alt="" />
+					            </a> 
+					            <a href="javascript:prevStation()"><img src="images/nav/prev.gif" alt="prev" width="42" height="53" /></a>
+					            <a href="javascript:nextStation()"><img src="images/nav/next.gif" alt="next" width="42" height="53" /></a>
+					            <div id="nom_arret" style="height:500px;width:600px;background:no-repeat;"> </div>
+					        </div>
+					</div>
+				</div>
+	   		    <div id="map_canvas" ></div>
+          <a href="#section1" class="prev"></a>
+          <a href="#section1b" class="next"></a>      
+        </li>
+		
+		
+		
+		<!--******************************
+		**		PAGE SONDAGE			**
+		*******************************-->
+		
+        <li class="sub sondage" id="section1b">
+          <div class="scroll">
+		
+		<div id="etapes"><div class="content">
+			<div id="etape1">
+				<h2>Selon vous quel avenir pour la petite ceinture ?</h2>
+				<p class="reponses reponse1">Aménagement en chemin pédestre et publique<a href="#"></a></p>
+				<p class="reponses reponse2">Conservation en lieu sauvage et historique<a href="#"></a></p>
+				<p class="reponses reponse3"><br />Réutilisation pour les transport<a href="#"></a></p>
+			</div>
+			
+			<div id="etape2" style="visibility:hidden">
+				<div class="statistique fleft">	
+				</div>
+				<div class="fleft">
+					<img src="images/nav/fleche.png"/>
+				</div>
+				<div class="texteSondage fleft">
+					Incenderat autem audaces usque ad insaniam homines ad haec, quae nefariis egere conatibus, Luscus quidam curator urbis subito visus: eosque ut heiulans baiolorum praecentor ad expediendum quod orsi sunt incitans vocibus crebris. qui haut longe postea ideo vivus exustus est.
+				</div>
+			</div>
+		</div></div>
+		
+
+		<div id="reseaux">  <div class="content">
+				<div class="formulaire fleft">
+					<h2>Réagissez, commentez !<br /></h2>
+					<form>
+					<input type="text" size="54" placeholder="votre pseudo"></input><br />
+					<textarea cols="40" rows="10" placeholder="votre commentaire"></textarea><br />
+					<input type="submit" value="Valider"/>
+					</form>
+				</div>
+
+			
+			<div class="formulaire fright">
+				<div class="fleft">
+					<img alt="Share button" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://www.hyperarts.com/external-xfbml/share-button.html', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');" src="images/nav/share_boutton.png">
+				</div>
+				<div class="fleft">
+					<a href="https://twitter.com/intent/tweet?button_hashtag=lapetiteceinture" data-lang="fr" data-related="Baltha83100"><img src="images/nav/twitter.png"/></a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				</div>
+				<div>
+					<a class="twitter-timeline" href="https://twitter.com/Baltha83100" data-link-color="#fff" data-theme="dark" data-widget-id="392631708257755137" data-border-color="#fff" data-chrome="nofooter transparent noscrollbar noheader"  data-tweet-limit="3">Tweets de @lapetiteceinture</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+							</script>
+				</div>
+			</div>
+			
+		</div>	</div>
+
+		  </div>
+
+          <a href="#section1a" class="prev"></a>
+		  <a href="#section2" class="next"></a>    
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="section">
+      <ul>
+
+	    <!--******************************
+		**		PAGE HISTORIQUE			**
+		*******************************-->
+       
+	    <li class="sub historique" id="section2">
+
+<div class="scroll">
+<div class="content">
+    <div class="friseAll">
+        <div class="frise"></div>
+        <a href="javascript:" data-elem="div1" class="dateJump first focus">1851</a>
+        <a href="javascript:" data-elem="div2" class="dateJump">1869</a>
+        <a href="javascript:" data-elem="div3" class="dateJump">1900</a>
+        <a href="javascript:" data-elem="div4" class="dateJump">1934</a>
+        <a href="javascript:" data-elem="div5"class="dateJump last">1980</a>
+    </div>
+
+	<div class="histo">
+            <div class="carousel-wmax ">
+                <div class="div1 item">
+                	<div class="conteneur-text">
+                    	<h2>1851 à 1868 :</h2>
+                    
+	                    <p>La ligne est mise en service pour le transport de marchandises par Napoléon 3 en 1852, soit un an après son coup d’état.
+	        			L’objectif principal était de relier les réseaux des compagnies de chemin de fer aboutissant à Paris pour le transport de marchandises. Le second objectif était d’ordre stratégique : faciliter le transport des troupes à l’intérieur du mur d’enceinte de Paris  .
+	        			Le tracé devait relier les gares de l’Ouest et Rouen, du Nord, de Strabourg, de Lyon et d’Orléans. Cette section prendra le nom de "Petite Ceinture Rive Droite".
+	        			En 1852 est mise en activité pour le transport de marchandises la section reliant les Batignolles à la Chapelle au Nord de Paris. Celle-ci est étendue en 1853 de la chapelle à Evangile, puis d’Evangile à Ivry en 1854.
+
+	        			1854 verra aussi la première mise en circulation de train de voyageurs entre les Batignolles et Auteuil : cette section sera appelée «  ligne d’Auteuil ». 
+
+	        			En 1861 le chemin de fer de ceinture est prolongé sur la rive gauche de la Seine entre Auteuil et la gare D’Orléans : cette section prendra le nom de « petite ceinture rive gauche »
+	        			Il n’y avait qu’une classe de voyageurs, la seconde. A partir du 12 juin 1864, compartiments de première classe furent ajoutés. 
+	        			</p>
+        			</div>
+                    <div class="gallery">
+        				<div class="feature">
+        					<img src="images/historique/1851-1869/photo1.jpg" border="0"/>
+        				</div>
+        				<div class="thumbs">
+
+        				<a href="#" rel="images/historique/1851-1869/photo1.jpg" class="galImg focus" ><img src="images/historique/1851-1869/photo1.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1851-1869/photo2.jpg" class="galImg" ><img src="images/historique/1851-1869/photo2.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1851-1869/photo3.jpg" class="galImg"><img src="images/historique/1851-1869/photo3.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1851-1869/photo4.jpg" class="galImg"><img src="images/historique/1851-1869/photo4.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1851-1869/photo5.jpg" class="galImg"><img src="images/historique/1851-1869/photo5.jpg" class="thumb" border="0"/></a>
+        				</div>
+        			</div>
+                  </div>
+
+                <div class="div2 item">
+                	<div class="conteneur-text">
+	                  	<h2>De 1869 à 1899 : </h2>
+	                  	
+	                  	<p>En 1869, 17 ans après la construction du premier tronçon, le tracé s’est développé et  la rive gauche et la rive droite sont mises bout à bout : le tout Paris est accessible sur une seule et même ligne.
+	        			Le trafic de la Petite Ceinture croit progressivement. Initialement,  on ne transportait que des marchandises, des émigrants et des militaires et on ne faisait qu’un service de jour. Un service de nuit est mis en place 
+
+	        			Il y avait des trains toutes les deux heures l’hiver et toutes les heures l’été.
+
+	        			En 1870, début de la guerre. La Petite Ceinture fut lourdement touchée par de nombreux bombardements en particulier vers Auteuil.
+	        			En 1872, ouverture d'une gare de marchandises à Grenelle et d'un raccordement entre la Petite Ceinture et la Gare du Nord.
+	        			Accident dans le tunnel de Charonne en 1874. Un accident avait déjà eu lieu dans le Tunnel de Belleville en 1869.
+	        			En 1878, à cause de l’Exposition universelle il y avait 6 trains par heures. 
+	        			</p>
+        			</div>
+                    <div class="gallery">
+        				<div class="feature">
+        					<img src="images/historique/1869-1900/photo1.jpg" border="0" />
+        				</div>
+        				<div class="thumbs">
+
+        				<a href="#" rel="images/historique/1869-1900/photo1.jpg" class="galImg focus" ><img src="images/historique/1869-1900/photo1.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1869-1900/photo2.jpg" class="galImg" ><img src="images/historique/1869-1900/photo2.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1869-1900/photo3.jpg" class="galImg"><img src="images/historique/1869-1900/photo3.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1869-1900/photo4.jpg" class="galImg"><img src="images/historique/1869-1900/photo4.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1869-1900/photo5.jpg" class="galImg"><img src="images/historique/1869-1900/photo5.jpg" class="thumb" border="0"/></a>
+        			</div>
+                  </div> 
+                </div>
+                <div class="div3 item">
+                	<div class="conteneur-text">
+	                  	<h2>De 1900 à 1933 : </h2>
+	                  	<p>En 1900, un gros concurrent voit le jour : " Le Métropolitain »  : doté d’un matériel électrique plus moderne et plus rapide, de stations plus confortables, il entraîna une baisse progressive des mouvements de voyageurs sur la Petite Ceinture jusqu’en 1934. 
+	        			En 1910, la Petite Ceinture eut un regain de trafic grâce à la forte crue. Elle profita du fait que la plupart des stations du Métropolitain étaient inondées et donc que certaines lignes étaient fermées.
+
+	        			Inversement, le trafic de marchandise continua d’augmenter au début du 20ème siècle , occupant une place de plus en plus importante de la recette totale. Pour les compagnies privées de chemin de fer (qui existèrent en France jusqu’à la création de la SNCF en 1938) exploitant la Petite Ceinture, le transport de marchandises était beaucoup plus lucratif qu’un transport en commun de voyageurs .
+	        			C’est pourquoi durant cette période les installations ne furent pas modernisées pour le transport de voyageurs.
+	        			</p>
+        			</div>
+                    <div class="gallery">
+        				<div class="feature">
+        					<img src="images/historique/1900-1934/photo1.jpg" border="0" id="haha"/>
+        				</div>
+        				<div class="thumbs">
+
+        				<a href="#" rel="images/historique/1900-1934/photo1.jpg" class="galImg focus" ><img src="images/historique/1900-1934/photo1.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1900-1934/photo2.jpg" class="galImg" ><img src="images/historique/1900-1934/photo2.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1900-1934/photo3.jpg" class="galImg"><img src="images/historique/1900-1934/photo3.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1900-1934/photo4.jpg" class="galImg"><img src="images/historique/1900-1934/photo4.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1900-1934/photo5.jpg" class="galImg"><img src="images/historique/1900-1934/photo5.jpg" class="thumb" border="0"/></a>
+        			</div>
+                  </div> 
+                </div>
+                <div class="div4 item">
+                	<div class="conteneur-text">
+	                  	<h2>De 1934 à 1980 : </h2>
+	                  	<p>Suppression du service voyageurs, mais maintien du service marchandises sur la Petite Ceinture Rive Droite et la Petite Ceinture Rive Gauche. 
+	        			Il fut décidé de remplacer le service ferroviaire par un service de bus à partir du 23 juillet 1934. Cette ligne de bus porte le nom de PC pour « Petite Ceinture ».
+	        			Seule une petite portion du réseau ferré survécut : La Ligne d'Auteuil.
+	        			La Petite Ceinture fut utilisée pendant la 2e guerre mondiale. De nombreuses attaques de trains allemands par des résistants y eurent lieu, en particulier à Charonne. 
+	        			Elle fut aussi utilisée pour les marchandises.
+	        			En 1960, suite à une destruction du viaduc du Point du Jour en 1943 pendant la guerre, le viaduc fut démonté. 
+	        			En 1980, nait le projet VMI (Vallée de Montmorency Invalides). Il est prévu qu'une partie de la ligne d'Auteuil soit utilisée pour le nouveau RER C . 
+	        			</p>
+        			</div>
+                    <div class="gallery">
+        				<div class="feature">
+        					<img src="images/historique/1934-1980/photo1.jpg" border="0" />
+        				</div>
+        				<div class="thumbs">
+
+        				<a href="#" rel="images/historique/1934-1980/photo1.jpg" class="galImg focus" ><img src="images/historique/1934-1980/photo1.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1934-1980/photo2.jpg" class="galImg" ><img src="images/historique/1934-1980/photo2.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1934-1980/photo3.jpg" class="galImg"><img src="images/historique/1934-1980/photo3.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1934-1980/photo4.jpg" class="galImg"><img src="images/historique/1934-1980/photo4.jpg" class="thumb" border="0"/></a>
+
+        				<a href="#" rel="images/historique/1934-1980/photo5.jpg" class="galImg"><img src="images/historique/1934-1980/photo5.jpg" class="thumb" border="0"/></a>
+        			</div>
+                  </div> 
+                </div>
+                <div class="div5 item">
+                	<div class="conteneur-text">
+	                  	<h2>De 1980 à aujourd’hui : </h2>
+	                  	<p>Il était prévu dans le courant des années 90 de réactiver la petite ceinture au niveau sud. De nombreux projets concurrents étaient en courses : La Petite Ceinture Sud et le Tramway des Maréchaux. 
+	        			Malheureusement, le projet du Tramway des Maréchaux a été retenu ce qui laisse la Petite Ceinture à sa merci et risque de la voir disparaître à Jamais.
+	        			La Petite Ceinture est encore partiellement utilisée à des fins touristiques grâce à 2 principales associations de Sauvegarde : l'ASPCRF et le COPEF. Ils font circuler des trains spéciaux sur ces lignes.
+	        			En 2006 , la ville de Paris et RFF ( réseau ferré de France), propriétaire d’une majeure partie de la ligne se sont engagés dans des discussions concernant le futur de la petite ceinture. Ces discussions ont abouties à des actions notamment :
+	        			-	L’aménagement de promenades : sentier nature dans le 16e arrondissement, Une promenade est actuellement en cours d’aménagement dans le 15e arrondissement.
+	        			-	La cession par RFF et la SNCF de la majeure partie des anciennes gares, dans un souci partagé avec la Ville de Paris de veiller à préserver leur spécificité patrimoniale et leur rôle culturel (salle de concert « la Flèche d’Or » par exemple).
+	        			Le protocole engagé en 2006 est aujourd’hui arrivé à son terme.
+	        			</p>
+        			</div>
+                    <div class="gallery">
+        				<div class="feature">
+        					<img src="images/historique/aujourdhui/photo1.jpg" border="0"/>
+        				</div>
+        				<div class="thumbs">
+
+        					<a href="#" rel="images/historique/aujourdhui/photo1.jpg" class="galImg focus" ><img src="images/historique/aujourdhui/photo1.jpg" class="thumb" border="0"/></a>
+
+        					<a href="#" rel="images/historique/aujourdhui/photo2.jpg" class="galImg" ><img src="images/historique/aujourdhui/photo2.jpg" class="thumb" border="0"/></a>
+
+        					<a href="#" rel="images/historique/aujourdhui/photo3.jpg" class="galImg"><img src="images/historique/aujourdhui/photo3.jpg" class="thumb" border="0"/></a>
+
+        					<a href="#" rel="images/historique/aujourdhui/photo4.jpg" class="galImg"><img src="images/historique/aujourdhui/photo4.jpg" class="thumb" border="0"/></a>
+
+        					<a href="#" rel="images/historique/aujourdhui/photo5.jpg" class="galImg"><img src="images/historique/aujourdhui/photo5.jpg" class="thumb" border="0"/></a>
+
+        					<a href="#" rel="images/historique/aujourdhui/photo6.jpg" class="galImg"><img src="images/historique/aujourdhui/photo6.jpg" class="thumb" border="0"/></a>
+
+        					<a href="#" rel="images/historique/aujourdhui/photo7.jpg" class="galImg"><img src="images/historique/aujourdhui/photo7.jpg" class="thumb" border="0"/></a>
+        				</div>
+                  </div> 
+                </div>
+    		</div>
+    </div>
+
+</div>
+</div>
+		
+          <a href="#section1b" class="prev"></a> 
+          <a href="#section2a" class="next"></a>  
+        </li>
+		
+		<!--**************************
+		**		PAGE PHOTO			**
+		***************************-->
+		
+        <li class="sub photo" id="section2a">
+            <div class="scroll_photo">
+			<div class="content">
+			    <h2>Ajoutez votre photo sur instagram avec le hashtag #petiteceinture et retrouvez la ici.</h2>
+                <div id="instafeed"></div>
+			</div>
+			</div>
+          <a href="#section2" class="prev"></a> 
+          <a href="#section2b" class="next"></a>  
+        </li>
+		
+		<!--******************************
+		**		PAGE CREDITS			**
+		*******************************-->
+		
+        <li class="sub" id="section2b">
+          <h2>Section 2-b</h2>
+          <p>content 6</p>
+          <a href="#section2a" class="prev"></a>  
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  
+
+</body>
+
+</html>
