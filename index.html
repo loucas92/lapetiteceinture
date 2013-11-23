@@ -10,7 +10,9 @@
   <script type="text/javascript" src="js/scroll/jquery.mCustomScrollbar.concat.min.js"></script>
   <script src="http://d3js.org/d3.v3.min.js"></script> 
   <script type="text/javascript" src="js/instagram.js"></script>
+  <script src="js/TweenMax.min.js"></script>
   <link rel="stylesheet" href="css/style.css">
+  
   <link href="js/scroll/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" media="screen"/>
   
   <script type="text/javascript">
@@ -57,6 +59,36 @@
 
                     }
                 });
+				
+	
+	
+	
+	var tl = new TimelineMax({
+		
+		onComplete: function(){
+			 tl.restart();
+			 
+		}
+	});
+	
+	tl.set('#presentation h2,#t1,#t2,#t3,#t4,#t5', {opacity:'0'});
+	tl.set('#presentation h2', {transform:'translateY(-20px)'});
+	tl.to('#presentation h2', 2, {transform:'translateY(20px)',opacity:'1', ease: Power2.easeInOut});
+	tl.to('#t1', 3, {opacity:'1', ease: Power2.easeInOut});
+	tl.to('#t1', 3, {opacity:'0',display:'none', ease: Power2.easeInOut} );
+	tl.to('#t2', 3, {opacity:'1',display:'block', ease: Power2.easeInOut});
+	tl.to('#t2', 3, {opacity:'0',display:'none', ease: Power2.easeInOut});
+	tl.to('#t3', 3, {opacity:'1',display:'block', ease: Power2.easeInOut});
+	tl.to('#t3', 3, {opacity:'0',display:'none', ease: Power2.easeInOut});
+	tl.to('#t4', 3, {opacity:'1',display:'block', ease: Power2.easeInOut});
+	tl.to('#t4', 3, {opacity:'0',display:'none', ease: Power2.easeInOut});
+	tl.to('#t5', 3, {opacity:'1',display:'block', ease: Power2.easeInOut});
+	tl.to('#t5,#presentation h2' ,10, {opacity:'0',display:'none', ease: Power2.easeInOut});
+	
+	
+	
+	
+	
 	});
 </script>
 
@@ -88,8 +120,13 @@
           <div class="content">
 			<div id="presentation">
 			<h2>Qu’est ce que la Petite Ceinture ?</h2>
-			<p>“ La petite Ceinture, ou “coulée verte”,	est une voie ferrée <br/>
-			longue de 32km et faisant le tour de Paris. ”</div>
+			<p id="t1">La petite Ceinture, ou “coulée verte”, est une voie ferrée <br/>
+			longue de 32km et faisant le tour de Paris. 
+			<p id="t2">Cete ligne a servi pendant plus d’un siècle à transporter des marchandises et des voyageurs entre les différentes gares de Paris </p>
+			<p id="t3">La petite ceinture nous évoque un passé révolus, le temps des locomotives à vapeur et des poinçonneuses à billets </p>
+			<p id="t4">C’est aussi un des rares endroits ou la nature à encore sa place à l’intérieur de Paris.</p>
+			<p id="t5">Certains tronçons de la de la ligne sont  laissés en friche, laissant à la végétation le loisir de s’exprimer librement.</p>
+			</div>
 		  </div>
           <a href="#section1a" class="next"></a>
         </li>

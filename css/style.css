@@ -150,6 +150,13 @@ overflow:auto;
 	font-size:2em;
 	margin-top:200px;
 	}
+	#presentation h2{
+	margin-bottom:30px;
+	}
+	#t1{display:block;}
+	#t2{display:none;}
+	#t3{display:none;}
+	#t4{display:none;}
 
 /*GALERIE PHOTO*/
 	
