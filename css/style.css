@@ -369,6 +369,17 @@ overflow:auto;
      	float:left;
      	width:400px;
 	}
+	
+	    .conteneur-text h2
+	{
+		margin-top:30px;
+     	margin-bottom:30px;
+	}
+	
+	   .conteneur-text p
+	{
+     margin-bottom:30px;
+	}
 
      .gallery img
 	 {
@@ -429,6 +440,7 @@ overflow:auto;
 	
     .dateJump:hover, .focus{
         background:url('../images/nav/focus.png') no-repeat;
+		
         width:63px;
         height:30px;
         top:-75px;
@@ -455,6 +467,8 @@ overflow:auto;
 	{
 	margin-right:0px;
 	}
+	
+	
 	
 /*GOOGLE MAP*/
 
