@@ -219,7 +219,7 @@ defaults : {
 	        } 
 	    } 
 
-		document.getElementById('nom_arret').innerHTML = "<h3>" + villes + "</h3><br /><p>" + textStation + "</p>";
+		document.getElementById('nom_arret').innerHTML = "<div id='arret_content'> <h3>" + villes + "</h3><br /><p>" + textStation + "</p> </div>";
 		document.getElementById('nom_arret').style.backgroundImage="url("+ img +")";
 	},
 
