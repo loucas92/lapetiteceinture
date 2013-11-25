@@ -524,6 +524,7 @@ height:500;width:960px;background:no-repeat;
 	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=80)"; /*--Transparence sous IE 8--*/
 	position:absolute;
 	bottom:0px;	
+	overflow:auto;
 }
 
 #prevstation{
@@ -557,14 +558,14 @@ background:#fff;
 }
 				
 .popup h3 { 
-margin:0 0 20px; 
-padding:5px 10px; 
+
+margin-left:20px;
 font-size:1.5em; 
 font-weight:normal; 
 } 
 .popup p { 
-padding:5px 10px; 
-margin:5px 0; 
+ 
+margin-left:20px
 } 
 .popup img.cntrl { 
 position:absolute; 
