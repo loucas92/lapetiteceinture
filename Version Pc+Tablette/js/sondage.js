@@ -32,18 +32,18 @@ defaults : {
 
     showSurvey: function(){
 
-			$(this.params.responseBlock).css('animation','rtl 5s');
+			$(this.params.responseBlock).css('animation','rtl 3s');
 
-		    setTimeout(function(){$(sondage.params.responseBlock).hide();},4000);
+		    setTimeout(function(){$(sondage.params.responseBlock).hide();},2000);
 
 		    setTimeout(function(){  
 
 			    $(sondage.params.responseBlock).css('display','none');
 			    $(sondage.params.surveyBlock).css('visibility','visible');
 				sondage.createSurvey();
-			    $(sondage.params.surveyBlock).css('animation','rtlReturn 3s');
+			    $(sondage.params.surveyBlock).css('animation','rtlReturn 2s');
 			
-			},3000);
+			},2000);
     },
 
     createSurvey: function(){
@@ -72,22 +72,14 @@ defaults : {
 			      .style("fill", function(d) { return sondage.color(d.data.age); })
 			      .transition()
 			      .ease("bounce")
-			      .duration(6000)
+			      .duration(4000)
 			      .attrTween("d",  function(b){
 			      		b.innerRadius = 0;
 	  					var i = d3.interpolate({startAngle: 0, endAngle: 0}, b);
 	  					return function(t) { return sondage.arc(i(t)); };
 	  				})
 
-			      .transition()
-			      .ease("elastic")
-			      .delay(function(d, i) { return 6000 + i * 150; })
-			      .duration(2250)
-			      .attrTween("d", function(b){
-			      	b.innerRadius = sondage.radius * .6;
-					var i = d3.interpolate({innerRadius: 0}, b);
-					return function(t) { return sondage.arc(i(t)); };
-			      });
+			      
 
 			  g.append("text")
 			      .attr("transform", function(d) { return "translate(" + sondage.arc.centroid(d) + ")"; })
