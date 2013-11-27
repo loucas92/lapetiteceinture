@@ -512,11 +512,12 @@ left:0;
 
 #nom_arret {
 
-height:500;width:960px;background:no-repeat;
+height:550;width:960px;background:no-repeat;
 }
 
 #arret_content {
-	width:100%;
+	border-top:2px solid white;
+	width:940px;
 	height:200px;
 	background-color:black;
 	filter:alpha(opacity = 80); 
@@ -525,6 +526,8 @@ height:500;width:960px;background:no-repeat;
 	position:absolute;
 	bottom:0px;	
 	overflow:auto;
+	padding-right:20px;
+	padding-top:20px;
 }
 
 #prevstation{
@@ -560,12 +563,15 @@ background:#fff;
 .popup h3 { 
 
 margin-left:20px;
-font-size:1.5em; 
-font-weight:normal; 
+font-size:1.5em;
+font-family:"Helvetica"; 
+
 } 
 .popup p { 
  
-margin-left:20px
+margin-left:20px;
+font-family:"Helvetica";
+
 } 
 .popup img.cntrl { 
 position:absolute; 
