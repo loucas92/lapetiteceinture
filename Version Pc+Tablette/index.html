@@ -60,7 +60,9 @@
                     }
                 });
 				
-
+	
+	
+	
 	var tl = new TimelineMax({
 		
 		onComplete: function(){
@@ -123,16 +125,16 @@
 			<p id="t2">Cete ligne a servi pendant plus d’un siècle à transporter des marchandises et des voyageurs entre les différentes gares de Paris </p>
 			<p id="t3">La petite ceinture nous évoque un passé révolus, le temps des locomotives à vapeur et des poinçonneuses à billets </p>
 			<p id="t4">C’est aussi un des rares endroits ou la nature à encore sa place à l’intérieur de Paris.</p>
-			<p id="t5">Certains tronçons de la de la ligne sont  laissés en friche, laissant à la végétation le loisir de s’exprimer librement.
-				
-		</p>
+			<p id="t5">Certains tronçons de la de la ligne sont  laissés en friche, laissant à la végétation le loisir de s’exprimer librement.</p>
 			</div>
 		  </div>
-		  <video width="500" height="300" controls="controls">
-				<source src="source/petite_ceinture.webm" type="video/webm" />
-			</video>
-          <a href="#section1a" class="next"></a>
+          <a href="#section1a" class="fleche_home"></a>
         </li>
+		
+		<!--******************************
+		**		PAGE CARTE				**
+		*******************************-->
+		
         <li class="sub carte" id="section1a">
 				<div id="hideshow" style="visibility: hidden;">
 			    	<div id="fade"></div> 
@@ -190,7 +192,7 @@
 					<form>
 					<input type="text" size="54" placeholder="votre pseudo"></input><br />
 					<textarea cols="40" rows="10" placeholder="votre commentaire"></textarea><br />
-					<input type="submit" value="Valider"/>
+					<input type="submit" value="Valider" class="valider" />
 					</form>
 				</div>
 
@@ -200,13 +202,13 @@
 					<img alt="Share button" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://www.hyperarts.com/external-xfbml/share-button.html', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');" src="images/nav/share_boutton.png">
 				</div>
 				<div class="fleft">
-					<a href="https://twitter.com/intent/tweet?button_hashtag=lapetiteceinture" data-lang="fr"><img src="images/nav/twitter.png"/></a>
+					<a href="https://twitter.com/intent/tweet?button_hashtag=lapetiteceinture" data-lang="fr" data-related="Baltha83100"><img src="images/nav/twitter.png"/></a>
 					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 				</div>
 				<div>
-
-					<a class="twitter-timeline" href="https://twitter.com/search?q=+%23lapetiteceinture" data-link-color="#fff" data-theme="dark" data-widget-id="406113049242660865" data-border-color="#fff" data-chrome="nofooter transparent noscrollbar noheader"  data-tweet-limit="3">Tweets concernant " #lapetiteceinture"</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					<a class="twitter-timeline" href="https://twitter.com/Baltha83100" data-link-color="#fff" data-theme="dark" data-widget-id="392631708257755137" data-border-color="#fff" data-chrome="nofooter transparent noscrollbar noheader"  data-tweet-limit="3">Tweets de @lapetiteceinture</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+							</script>
 				</div>
 			</div>
 			
@@ -423,9 +425,16 @@
 		**		PAGE CREDITS			**
 		*******************************-->
 		
-        <li class="sub" id="section2b">
-          <h2>Section 2-b</h2>
-          <p>content 6</p>
+        <li class="sub credit" id="section2b">
+          <div class="content">
+			<div id="credit">
+			<h2>Nos liens utiles</h2>
+			<p>http://lapetiteceinture.jenparle.net</p>
+			<p>http://www.petitceinture.org</p>
+			<p>http://www.parisinconnu.com</p>
+			<p>http://fr.wikipedia.org/wiki/Ligne_de_Petite_Ceinture</p>
+			</div>
+		  </div>
           <a href="#section2a" class="prev"></a>  
         </li>
       </ul>
