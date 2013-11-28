@@ -108,6 +108,15 @@
         color:white
       }
 	  
+	  .section .fleche_home{
+		display:block;
+	    height:164px;
+		width:119px;
+        position:absolute;
+        bottom:20%;
+        color:white
+	  }
+	  
 /*NAVIGATION*/
 
       .section .next{
@@ -118,6 +127,11 @@
         left:30px;
 		background-image:url('../images/nav/prev.png');
       }
+	  
+	  .section .fleche_home{
+		right:30px;
+		background-image:url('../images/nav/fleche_home.png');
+	  }
 	  
 /*PAGES*/
 
@@ -145,7 +159,7 @@ overflow:auto;
 	background-image:url('../images/fond/home.png');
 	}
 	
-	#presentation
+	#presentation, #credit
 	{
 	font-size:2em;
 	margin-top:200px;
@@ -212,6 +226,26 @@ overflow:auto;
 	.sondage
 	{
 	background-image:url('../images/fond/sondage.png');
+	}
+	
+	.valider
+	{
+	background:transparent;
+	border:none;
+	height:30px;
+	width:164px;
+	color:transparent;
+	background-image:url('../images/nav/valider.png');
+	}
+	
+	.valider:hover
+	{
+	background:transparent;
+	border:none;
+	height:30px;
+	width:164px;
+	color:transparent;
+	background-image:url('../images/nav/valider_hover.png');
 	}
 
 	#etapes, #reseaux
@@ -513,8 +547,6 @@ left:0;
 #nom_arret {
 
 height:550;width:960px;background:no-repeat;
-background-size:100%;
-
 }
 
 #arret_content {
@@ -530,7 +562,6 @@ background-size:100%;
 	overflow:auto;
 	padding-right:20px;
 	padding-top:20px;
-	
 }
 
 #prevstation{
@@ -545,7 +576,7 @@ background-size:100%;
 
 
 .popup_block { 
-background:black; 
+background:#ddd; 
 
 top:15%;
 width:960px; 
@@ -557,7 +588,7 @@ z-index:100;
 .popup_block .popup { 
 
 width:100%; 
-background:black; 
+background:#fff; 
  
 
 
@@ -580,4 +611,23 @@ font-family:"Helvetica";
 position:absolute; 
 right:0px; 
 top:0px; 
-} 
+}
+
+/*CREDIT*/
+
+#credit h2
+{
+text-align:center;
+margin-bottom:30px;
+}
+
+#credit p
+{
+font-size:0.7em;
+text-align:center;
+}
+
+.credit
+{
+background-image:url('../images/fond/credits.png');
+}
