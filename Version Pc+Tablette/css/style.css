@@ -681,7 +681,7 @@ left:0;
 
 #nom_arret {
 
-height:550;width:960px;background:no-repeat;
+height:550;width:960px;background:no-repeat;background-size:100%;
 }
 
 #arret_content {
