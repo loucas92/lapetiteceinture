@@ -513,6 +513,8 @@ left:0;
 #nom_arret {
 
 height:550;width:960px;background:no-repeat;
+background-size:100%;
+
 }
 
 #arret_content {
@@ -528,6 +530,7 @@ height:550;width:960px;background:no-repeat;
 	overflow:auto;
 	padding-right:20px;
 	padding-top:20px;
+	
 }
 
 #prevstation{
@@ -542,7 +545,7 @@ height:550;width:960px;background:no-repeat;
 
 
 .popup_block { 
-background:#ddd; 
+background:black; 
 
 top:15%;
 width:960px; 
@@ -554,7 +557,7 @@ z-index:100;
 .popup_block .popup { 
 
 width:100%; 
-background:#fff; 
+background:black; 
  
 
 
