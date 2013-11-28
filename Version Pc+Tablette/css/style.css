@@ -194,12 +194,20 @@ video{
 	height:50px;
 	top:0px;
 	right:50px;
-	background-image:url('../images/nav/sound.png');
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	background-position:50% 50%;
 	}
 	
+	.mute
+	{
+	background-image:url('../images/nav/mute.png');
+	}
+	
+	.sound
+	{
+	background-image:url('../images/nav/sound.png');
+	}
 	
 /*STRUCTURE*/
 	
