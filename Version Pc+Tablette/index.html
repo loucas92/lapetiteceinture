@@ -84,11 +84,21 @@
 	tl.to('#t5', 3, {opacity:'1',display:'block', ease: Power2.easeInOut});
 	tl.to('#t5,#presentation h2' ,10, {opacity:'0',display:'none', ease: Power2.easeInOut});
 	
-	
-	
-	
-	
 	});
+
+	function mute(){
+		if($("#mute").is(".mute"))
+		{
+			$(".mute").attr("class", "sound");
+			$("#audio")[0].play();
+		}
+		else
+		{
+			$(".sound").attr("class", "mute");
+			$("#audio")[0].pause();
+		}
+		
+	}
 </script>
 
 </head>
@@ -104,7 +114,8 @@
 	<li><a class="link" href="#section1b">Sondage</a></li>
     <li><a class="link" href="#section2b">Credit</a></li>
   </ul>
-  <a href="#" id="mute" class="mute"> </a>
+  <a href="#" id="mute" class="mute" onclick="javascript:mute();"><audio id="audio" autoplay> 
+  <source src="source/musique.mp3" type="audio/mpeg"/></audio> </a>
   </div>
 
   <div id="content">
