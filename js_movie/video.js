@@ -30,7 +30,7 @@ player.button.addEventListener('click',player.playPause,false);
 player.video.addEventListener('timeupdate',player.updateProgress,false);
 
 $(document).ready(function() {
-	setTimeout(function(){
+	
 		
 	var isMobile = {
 	    Android: function() {
@@ -59,10 +59,10 @@ $(document).ready(function() {
 		}
 		else
 		{
-			$(location).attr('href', 'Pc/index.html');
+			setTimeout(function(){$(location).attr('href', 'Pc/index.html');},29000);
 		}
-			},29000);});
-
+			
+});
 
 
 
