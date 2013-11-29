@@ -229,8 +229,8 @@ video{
 	
       .section .next, .section .prev{
 		display:block;
-	    height:86px;
-		width:60px;
+	    height:94px;
+		width:41px;
         position:absolute;
         bottom:40%;
         color:white
@@ -238,8 +238,8 @@ video{
 	  
 	  .section .fleche_home{
 		display:block;
-	    height:164px;
-		width:119px;
+	    height:94px;
+		width:41px;
         position:absolute;
         bottom:40%;
         color:white
@@ -250,15 +250,18 @@ video{
       .section .next{
         right:30px;
 		background-image:url('../images/nav/next.png');
+		background-repeat:no-repeat;
       }
       .section .prev{
         left:30px;
 		background-image:url('../images/nav/prev.png');
+		background-repeat:no-repeat;
       }
 	  
 	  .section .fleche_home{
 		right:30px;
 		background-image:url('../images/nav/fleche_home.png');
+		background-repeat:no-repeat;
 	  }
 	  
 /*PAGES*/
