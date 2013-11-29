@@ -13,94 +13,7 @@
   <link rel="stylesheet" href="css/style.css">
   
   <link href="js/scroll/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css" media="screen"/>
-  
-  <script type="text/javascript">
-	$(document).ready(function(){
-    var feed = new Instafeed({
-        get: 'tagged',
-        tagName: 'petiteceinture',
-        clientId: '9f6b0518b3e24362983cf7271702fd37',
-       	resolution: 'thumbnail',
-        sortBy: 'random',
-        limit: '60',
-        after: function () {
-		    var images = $("#instafeed").find('a');
-		    $.each(images, function(index, image) {
-		      var delay = (index * 75) + 'ms';
-		      $(image).css('-webkit-animation-delay', delay);
-		      $(image).css('-moz-animation-delay', delay);
-		      $(image).css('-ms-animation-delay', delay);
-		      $(image).css('-o-animation-delay', delay);
-		      $(image).css('animation-delay', delay);
-		      $(image).addClass('animated flipInX');
-		    });
-			$(".scroll_photo").mCustomScrollbar({
-                    verticalScroll:true, // barre verticale
-                    theme:"light",
-                    scrollInertia: 13,
-                    scrollButtons:{
-                            enable: false
-
-                    }
-                });
-		},
-        template: '<a href="{{link}}" target="_blank"><img src="{{image}}" /><div class="likes">&hearts; {{likes}}</div></a>'
-        
-    });
-    feed.run();
-	
-	$(".scroll").mCustomScrollbar({
-                    verticalScroll:true, // barre verticale
-                    theme:"light",
-                    scrollInertia: 13,
-                    scrollButtons:{
-                            enable: false
-
-                    }
-                });
-				
-	
-	
-	
-	var tl = new TimelineMax({
-		
-		onComplete: function(){
-			 tl.restart();
-			 
-		}
-	});
-	
-	tl.set('#presentation h2,#t1,#t2,#t3,#t4,#t5', {opacity:'0'});
-	tl.set('#presentation h2', {transform:'translateY(-20px)'});
-	tl.to('#presentation h2', 2, {transform:'translateY(20px)',opacity:'1', ease: Power2.easeInOut});
-	tl.to('#t1', 3, {opacity:'1', ease: Power2.easeInOut});
-	tl.to('#t1', 3, {opacity:'0',display:'none', ease: Power2.easeInOut} );
-	tl.to('#t2', 3, {opacity:'1',display:'block', ease: Power2.easeInOut});
-	tl.to('#t2', 3, {opacity:'0',display:'none', ease: Power2.easeInOut});
-	tl.to('#t3', 3, {opacity:'1',display:'block', ease: Power2.easeInOut});
-	tl.to('#t3', 3, {opacity:'0',display:'none', ease: Power2.easeInOut});
-	tl.to('#t4', 3, {opacity:'1',display:'block', ease: Power2.easeInOut});
-	tl.to('#t4', 3, {opacity:'0',display:'none', ease: Power2.easeInOut});
-	tl.to('#t5', 3, {opacity:'1',display:'block', ease: Power2.easeInOut});
-	tl.to('#t5,#presentation h2' ,10, {opacity:'0',display:'none', ease: Power2.easeInOut});
-	
-	});
-
-	function mute(){
-		if($("#mute").is(".mute"))
-		{
-			$(".mute").attr("class", "sound");
-			$("#audio")[0].play();
-		}
-		else
-		{
-			$(".sound").attr("class", "mute");
-			$("#audio")[0].pause();
-		}
-		
-	}
-</script>
-
+ 
 </head>
 
 <body>  
@@ -114,7 +27,7 @@
 	<li><a class="link" href="#section1b">Sondage</a></li>
     <li><a class="link" href="#section2b">Crédits</a></li>
   </ul>
-  <a href="#" id="mute" class="sound" onclick="javascript:mute();"><audio id="audio" autoplay> 
+  <a href="#" id="mute" class="sound" onclick="javascript:scrolling.mute();"><audio id="audio" autoplay> 
   <source src="source/musique.mp3" type="audio/mpeg"/></audio> </a>
   </div>
 
@@ -460,6 +373,8 @@
    <script type="text/javascript" src="js/carrousel.js"></script>
    <script type="text/javascript" src="js/historique.js"></script>
    <script type="text/javascript" src="js/carte.js"></script>
+   <script type="text/javascript" src="js/gallerie.js"></script>
+   <script type="text/javascript" src="js/timeLine.js"></script>
   <script type="text/javascript" src="js/control.js"></script>
 </body>
 
