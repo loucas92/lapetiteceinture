@@ -236,14 +236,7 @@ video{
         color:white
       }
 	  
-	  .section .fleche_home{
-		display:block;
-	    height:94px;
-		width:136px;
-        position:absolute;
-        bottom:40%;
-        color:white
-	  }
+
 	  
 /*NAVIGATION*/
 
@@ -259,6 +252,12 @@ video{
       }
 	  
 	  .section .fleche_home{
+	  	display:block;
+	    height:136px;
+		width:96px;
+        position:absolute;
+        bottom:30%;
+        color:white;
 		right:30px;
 		background-image:url('../images/nav/fleche_home.png');
 		background-repeat:no-repeat;
@@ -293,7 +292,7 @@ overflow:auto;
 	#presentation, #credit
 	{
 	font-size:2em;
-	margin-top:200px;
+	margin-top:260px;
 	}
 	#presentation h2{
 	margin-bottom:30px;
