@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+<head>
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+	<title>Sondage_Petite-Ceinture</title>
+</head>
+<body>
+		<div id="header">
+			<a id="affiche_menu" href="javascript:showOrHide('menu')">
+			</a>
+				<img id="logo" src="source/nav/logo.png">
+		</div>
+		<div id="menu" style="display:none">
+			<li><a href="index.html">Accueil</a></li>
+			<li><a  href="historique.html">Historique</a></li>
+    		<li><a  href="station.html">Stations</a></li>
+			<li><a  href="quizz.html">Quizz</a></li>
+    		<li><a  href="sondage.html">Sondage</a></li>
+		</div>
+
+		<div id="contenu" class="sondage">
+			<p>Et pour vous l'avenir ça donne quoi?</p>
+				
+				<div id="questions">
+					<a href="javascript:showOrHide(statshare)" class="reponses">Aménagement en chemin pédestre</a>
+					<a href="javascript:showOrHide(statshare)" class="reponses">Réutilisation pour les transport</a>
+					<a href="javascript:showOrHide(statshare)" class="reponses">Conservation en lieu sauvage</a>
+				</div>
+
+				<div id="statshare" style="display:none">
+					<img id="histogramme" src="source/sondage/histogramme.png">
+				<div id="social">
+				<img alt="Share button" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://www.hyperarts.com/external-xfbml/share-button.html', 'facebook_share', 'height=320, width=640, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no');" src="source/nav/share_boutton.png">
+				<a href="https://twitter.com/intent/tweet?button_hashtag=lapetiteceinture" data-lang="fr" data-related="Baltha83100"><img src="source/nav/twitter.png"/></a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				</div>
+				</div>
+				
+					
+				
+		</div>
+</body>
+</html>
